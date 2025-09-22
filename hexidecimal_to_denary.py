@@ -1,17 +1,21 @@
-def hextodenary(hex): #this needs to be fixed !!!!
+def hextodenary(hex_string):
     value = 0
     power = 0
-    for i in reversed(hex):
+    
+    for i in reversed(hex_string):  
         if '0' <= i <= '9':
             digit_value = int(i)
         elif 'A' <= i <= 'F':
-            digit_value = 10 + (ord(i)-ord('A'))
+            digit_value = 10 + (ord(i) - ord('A'))
+        elif 'a' <= i <= 'f': 
+            digit_value = 10 + (ord(i) - ord('a'))
         else:
             return "cannot convert"
         
-        value = digit_value * (16 ** power)
+        value += digit_value * (16 ** power) 
         power += 1
+        
     return value
 
-h = str(input("Please enter a hex: "))
+h = input("Please enter a hex: ")
 print(hextodenary(h))
