@@ -1,4 +1,4 @@
-def hextodenary(hex):
+def hextodenary(hex): #this needs to be fixed !!!!
     value = 0
     power = 0
     for i in reversed(hex):
