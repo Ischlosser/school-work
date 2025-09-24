@@ -6,7 +6,7 @@ def hextodenary(hex_string):
         if '0' <= i <= '9':
             digit_value = int(i)
         elif 'A' <= i <= 'F':
-            digit_value = 10 + (ord(i) - ord('A'))
+            digit_value = 10 +  (ord(i) - ord('A'))
         elif 'a' <= i <= 'f': 
             digit_value = 10 + (ord(i) - ord('a'))
         else:
