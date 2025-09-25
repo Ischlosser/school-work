@@ -1,5 +1,4 @@
 def denarytohexadecimal(number):
-
     if not isinstance(number, int):
         raise ValueError("Input must be an integer.")
 
