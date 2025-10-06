@@ -1,4 +1,3 @@
-print("factorial")
 
 def iterFact(n):
     result = 1
@@ -6,6 +5,7 @@ def iterFact(n):
     while counter <= n:
         result = result * counter
         counter += 1
+        print(result)
     return result
 
 def recursiveFact(n):
