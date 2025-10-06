@@ -7,6 +7,9 @@ def Fib(x, y, n):
     else:
         Fib(y, z, n)
 
+def iterFib():
+    return        
+
 print(str(0))
 print(str(1))
 Fib(0, 1, 1000000000000)        
