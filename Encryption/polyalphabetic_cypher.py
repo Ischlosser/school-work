@@ -1,9 +1,8 @@
-def polyCypher(): #fix for strings with space
+def polyCypher(): 
     message = str(input("Enter your message: "))
-    message.replace(" ", "")
+    message = message.replace(" ", "")
     shift = input("Enter the shift word of the cipher (must be ASCII): ")
-    shift.replace(" ", "")
-    print(shift)
+    shift = shift.replace(" ", "")
     enc_text = ""
     shift_list = list(str(shift))
     i = 0
@@ -14,11 +13,10 @@ def polyCypher(): #fix for strings with space
         i += 1
     print(enc_text)
 
-def polyCypherDecrypt(): #fix for strings with space
+def polyCypherDecrypt(): 
     message = str(input("Enter your message: "))
     shift = input("Enter the shift word of the cipher (must be ASCII): ")
-    shift.replace(" ", "")
-    print(shift)
+    shift = shift.replace(" ", "")
     dec_text = ""
     shift_list = list(str(shift))
     i = 0

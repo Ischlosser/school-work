@@ -2,6 +2,7 @@ def caesar_cipher():
     message = str(input("Enter your message: "))
     while message.isascii() != True:
         message = str(input("Please enter only ASCII characters! "))
+    message = message.replace(" ", "")
     shift = int(input("Enter the shift of the cipher (must be an integer): "))
     encrypted_message = ""
     for character in message:
