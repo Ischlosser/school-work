@@ -36,9 +36,11 @@ def enqueue():
     qlast += 1
     return queue_subjects
 
-def dequeue(): #the limit doesn't work
-    global qfirst
-    if qfirst >= 10:
+def dequeue(): 
+    global qfirst, qlast
+    if qfirst == qlast:
+        qfirst = 0
+        qlast = 0
         return "Queue Underflow"
     else:
         print("Dequeued "+ queue_subjects[qfirst])
