@@ -1,15 +1,16 @@
 import time
 
-def passcode_breaker():
+def passcode_breaker(r):
     start = time.time()
     max = 57
     min = 48
     counter = 0
     pw_guess = "      "
     guess_list = list(str(pw_guess))
-    password = input("Enter an 6 digit passcode: ")
+    password = r 
+    """input("Enter an 6 digit passcode: ")
     while password.isdigit() != True or len(password) != 6:
-        password = input("Enter an 6 character password with digits only: ")
+        password = input("Enter an 6 character password with digits only: ")"""
     for i1 in range(min, max+1):
         guess_list[0] = chr(i1)
         for i2 in range(min, max+1):
@@ -27,10 +28,10 @@ def passcode_breaker():
                             counter += 1
                             if answer == password:
                                 end = time.time()
-                                print("The answer is " + answer)
-                                print("Count: " + str(counter))
-                                print("Time: " + str(end - start))
-                                return answer
+                                #print("The answer is " + answer)
+                                #print("Count: " + str(counter))
+                                #print("Time: " + str(end - start))
+                                return end - start
 
 
 
@@ -69,10 +70,18 @@ def password_breaker():
                                         print("Count: " + str(counter))
                                         print("Time: " + str(end - start))
                                         return answer
-x = int(input("Would you like to crack a passcode(0) or a password(1)? "))
+"""x = int(input("Would you like to crack a passcode(0) or a password(1)? "))
 if x == 0:
     print(passcode_breaker())
 elif x == 1:
     print(password_breaker())
 else:
-    print("error")
+    print("error")"""
+
+t = 0
+for i in range(000000, 999999+1):
+    num = str(i).rjust(6, "0")
+    t += passcode_breaker(num)
+
+print("Average time " + str(t/999999))
+    

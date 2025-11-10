@@ -1,8 +1,6 @@
 def polyCypher(): 
     message = str(input("Enter your message: "))
-    message = message.replace(" ", "")
     shift = input("Enter the shift word of the cipher (must be ASCII): ")
-    shift = shift.replace(" ", "")
     enc_text = ""
     shift_list = list(str(shift))
     i = 0
@@ -16,7 +14,6 @@ def polyCypher():
 def polyCypherDecrypt(): 
     message = str(input("Enter your message: "))
     shift = input("Enter the shift word of the cipher (must be ASCII): ")
-    shift = shift.replace(" ", "")
     dec_text = ""
     shift_list = list(str(shift))
     i = 0

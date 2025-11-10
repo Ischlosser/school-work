@@ -1,40 +1,49 @@
-stack_subjects = []
-queue_subjects = []
+stack_subjects = ["", "", "", "", "", "", "", "", "", ""]
+queue_subjects = ["", "", "", "", "", "", "", "", "", ""]
+slast = 0
+qfirst = 0
+qlast = 0
 def push():
-    obj = input("Please enter element: ")
-    stack_subjects.append(obj)
-    if len(stack_subjects) > 10:
-        stack_subjects.pop()
+    global slast
+    if slast >= 10:
         print(stack_subjects)
         return "Stack Overflow"
-    return stack_subjects
+    else:
+        stack_subjects[slast] = input("Please enter element: ")
+        slast += 1
+        return stack_subjects
 
 def pop():
-    if not stack_subjects:
+    global slast
+    if slast < 0:
         return "Stack Underflow"
     else:
-        popped = stack_subjects.pop()
-        print("Subject popped: " + str(popped))
+        print("Subject popped: " + stack_subjects[slast-1])
+        stack_subjects[slast-1] = ""
+        slast -= 1
         return stack_subjects
 
 def peek():
-    return stack_subjects[-1]
+    return stack_subjects[slast-1]
 
 
 def enqueue():
-    obj = input("Please enter element: ")
-    queue_subjects.append(obj)
-    if len(queue_subjects) > 10:
+    global qlast
+    if qlast >= 10:
         queue_subjects.pop()
         return "Queue Overflow"
+    queue_subjects[qlast] = input("Please enter element: ")
+    qlast += 1
     return queue_subjects
 
-def dequeue():
-    if not queue_subjects:
+def dequeue(): #the limit doesn't work
+    global qfirst
+    if qfirst >= 10:
         return "Queue Underflow"
     else:
-        dequeued = queue_subjects.pop(0)
-        print("Subject dequeued: " + str(dequeued))
+        print("Dequeued "+ queue_subjects[qfirst])
+        queue_subjects[qfirst] = ""
+        qfirst += 1
         return queue_subjects
 
 while True:
