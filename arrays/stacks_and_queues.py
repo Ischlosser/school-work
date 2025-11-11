@@ -30,7 +30,7 @@ def peek():
 def enqueue():
     global qlast
     if qlast >= 10:
-        queue_subjects.pop()
+        
         return "Queue Overflow"
     queue_subjects[qlast] = input("Please enter element: ")
     qlast += 1
