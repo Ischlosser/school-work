@@ -15,7 +15,7 @@ def push():
 
 def pop():
     global slast
-    if slast < 0:
+    if slast == 0:
         return "Stack Underflow"
     else:
         print("Subject popped: " + stack_subjects[slast-1])
@@ -59,15 +59,16 @@ while True:
     a = input("Enter: ")
     print("####################")
     print()
-    if int(a) == 1:
+    if a == "1":
         print(push())
-    elif int(a) == 2:
+    elif a == "2":
         print(pop())
-    elif int(a) == 3:
+    elif a == "3":
         print(peek())
-    elif int(a) == 4:
+    elif a == "4":
         print(enqueue())
-    elif int(a) == 5:
+    elif a == "5":
         print(dequeue())
     else:
         print("Invalid Input")
+    print(" ")
