@@ -4,6 +4,7 @@ import matplotlib.pyplot as mpl
 dies = int(input("How many dies would you like to roll? "))
 rolls = int(input("How many times would you like to roll? "))
 
+
 def rolling(dies, rolls):
     roll = []
     final = [[f"{q}"] for q in range(6*dies+2)]
@@ -28,10 +29,7 @@ def rolling(dies, rolls):
     mpl.title(f'Frequency of Sums from Rolling {dies} Dice ({rolls} Rolls)')
     mpl.xlabel('Sum of Dice')
     mpl.ylabel('Frequency')
-    for x in range(dies, 6*dies+1):
-        mpl.plot(final[i][0], final[i][1], marker='o', linestyle='-', color='b')
-    mpl.xticks([p for p in range(6*dies+2)]) #needs fix
-    mpl.show()
+    
 
 
 
